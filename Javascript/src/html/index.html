@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<style>
+  table 
+        {
+            width: 100%;
+            font: 17px Calibri;
+        }
+        table, th, td 
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+      
+        input[type='button'] 
+        {
+            font: 15px Calibri;
+            cursor: pointer;
+            border: none;
+            color: #FFF;
+        }
+        
+        input[type='text'], select 
+        {
+            font: 17px Calibri;
+            text-align: center;
+            border: solid 1px #CCC;
+            width: auto;
+            padding: 2px 3px;
+        }
+  #myProgress {
+    width: 100%;
+    background-color: #ddd;
+  }
+
+  #myBar {
+    width: 1%;
+    height: 30px;
+    background-color: #4CAF50;
+  }
+  #container {
+  margin: 20px;
+  width: 400px;
+  height: 8px;
+  }
+</style>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>GUIs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Counter</h1>
+    <div class="form-group col-md-3">
+      <input type="text" class="form-control" id="counts" onkeyup="count()">
+      <button onclick="count()">Count</button>
+    </div>
+    
+	<h1>Temperature Converter</h1>
+	<div class="form-group col-md-3">
+		<label for="usr">Celcius:</label>
+		<input type="text" class="form-control" id="celcius" onkeyup="celciusToFahrenheit()">
+	</div>
+
+	<div class="form-group col-md-3">
+		<label for="pwd">Fahrenheit:</label>
+		<input type="text" class="form-control" id="fahrenheit" onkeyup="fahrenheitToCelcius()">
+  </div>
+
+  <h1>Flight Booker</h1>
+  <div>
+    <select id="choice" onchange="change()">
+        <option value="one">one-way flight</option>
+        <option value="return">retrn flight</option>
+    </select>
+    <input type="date" id="oneway" name="trip-start" value="2020-01-01" min="2020-01-01" max="2020-12-31">
+    <input type="date" id="return" name="trip-start" value="2020-01-01" min="2020-01-01" max="2020-12-31" disabled> 
+    <button>Book</button>
+  </div>
+
+  <h1>Timer</h1>
+  <div class="slidecontainer">
+    <input id="slider" type="range" min="1" max="30" value="10" onchange="getValue()">
+    <button onclick="reset()">Reset</button>
+  </div>
+  <div id="myProgress">
+    <div id="myBar"></div>
+  </div>
+
+  <h1>CRUD</h1>
+  <div id="container" style="width:700px;">
+  </div>
+
+  <script src='../js/render.js'></script>
+</body>
+</html>

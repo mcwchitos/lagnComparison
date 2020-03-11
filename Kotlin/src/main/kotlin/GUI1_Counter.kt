@@ -3,7 +3,7 @@ import tornadofx.*
 
 class GUI1_Counter : View("Counter") {
     override val root = borderpane {
-        padding = Insets(10.0)
+        paddingAll = 10.0
         center {
             hbox {
                 spacing = 10.0
