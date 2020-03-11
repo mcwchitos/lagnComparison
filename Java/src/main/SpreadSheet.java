@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 // Although Swing is worse in almost every respect compared to JavaFX its TableView
 // was easier to customize to a spreadsheet than JavaFX's TableView.
