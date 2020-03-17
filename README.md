@@ -2,10 +2,10 @@
 
 
 # In order to execute Javascript project:
-1) install nodejs
-2) open Javascript folder
-3) run "npm install" command
-4) run "npm start" command
+1) Install nodejs (https://nodejs.org/en/download/)
+2) Open Javascript folder
+3) Run "npm install" from the command line
+4) Run "npm start" frome the command line
 
 # To execute Kotlin and Java projects, you need to:
 1) Install Intellij Idea (https://www.jetbrains.com/help/idea/installation-guide.html)
