@@ -1,4 +1,4 @@
-# lagnComparison
+# Language Comparison via Graphical User Interfaces
 
 
 # In order to execute Javascript project:
