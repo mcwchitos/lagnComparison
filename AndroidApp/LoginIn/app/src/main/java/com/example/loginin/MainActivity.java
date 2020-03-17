@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     TextView Total;
     int integer = 0;
     EditText cel, fahr, date1, date2;
+    boolean inFahr, inCel;
 
 
     @Override
@@ -93,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        inFahr = false;
+        inCel = false;
 
         timer = (ProgressBar)findViewById(R.id.timer);
         slider = (SeekBar)findViewById(R.id.slider);
@@ -219,6 +221,9 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(inFahr)
+                    return;
+                inCel = true;
                 String line = cel.getText().toString();
                 if (!line.equals("")){
                     System.out.println("cel" + line);
@@ -227,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
                     if (!newLine.equals(fahr.getText().toString()))
                         fahr.setText(newLine);
                 }
+                inCel = false;
             }
             @Override
             public void afterTextChanged(Editable s) {}
@@ -238,6 +244,9 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(inCel)
+                    return;
+                inFahr = true;
                 String line = fahr.getText().toString();
                 if (!line.equals("")){
                     System.out.println("fahr" + line);
@@ -246,6 +255,7 @@ public class MainActivity extends AppCompatActivity {
                     if (!newLine.equals(cel.getText().toString()))
                         cel.setText(newLine);
                 }
+                inFahr = false;
             }
             @Override
             public void afterTextChanged(Editable s) {}
