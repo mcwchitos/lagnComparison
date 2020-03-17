@@ -8,9 +8,9 @@
 4) run "npm start" command
 
 # To execute Kotlin and Java projects, you need to:
-1) Install Intellij Idea
+1) Install Intellij Idea (https://www.jetbrains.com/help/idea/installation-guide.html)
 2) go to File -> Open -> choose the folder with Java/Kotlin project
-3) Install Java/Kotlin itself
+3) Install Java/Kotlin itself 
 4) Run the project from Intellij Idea
 
 
