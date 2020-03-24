@@ -2,18 +2,6 @@
 
 
 # In order to execute Javascript project:
-1) install nodejs
-2) open Javascript folder
-3) run "npm install" command
-4) run "npm start" command
-
-# To execute Kotlin and Java projects, you need to:
-1) Install Intellij Idea
-2) go to File -> Open -> choose the folder with Java/Kotlin project
-3) Install Java/Kotlin itself
-
-
-# In order to execute Javascript project:
 1) Install nodejs (https://nodejs.org/en/download/)
 2) Open Javascript folder
 3) Run "npm install" from the command line
@@ -23,7 +11,6 @@
 1) Install Intellij Idea (https://www.jetbrains.com/help/idea/installation-guide.html)
 2) go to File -> Open -> choose the folder with Java/Kotlin project
 3) Install Java/Kotlin itself 
-
 
 # To execute Dart mobile(android) application, you need to:
 1) Install Dart (https://dart.dev/get-dart)
