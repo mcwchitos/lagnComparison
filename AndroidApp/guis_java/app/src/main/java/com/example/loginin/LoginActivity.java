@@ -45,13 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                     intent.putExtra("name",name);
                     startActivity(intent);
                 }
-
-
-
             }
         });
-
-
-
     }
 }

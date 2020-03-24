@@ -1,6 +1,7 @@
 package com.example.guis_kotlin.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -93,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
-                setContentView(R.layout.main_content)
+                startActivity(Intent(this@LoginActivity,GUI1Activity::class.java))
             }
         }
     }
