@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # lagnComparison
 
 
@@ -11,6 +12,21 @@
 1) Install Intellij Idea
 2) go to File -> Open -> choose the folder with Java/Kotlin project
 3) Install Java/Kotlin itself
+=======
+# Language Comparison via Graphical User Interfaces
+
+
+# In order to execute Javascript project:
+1) Install nodejs (https://nodejs.org/en/download/)
+2) Open Javascript folder
+3) Run "npm install" from the command line
+4) Run "npm start" frome the command line
+
+# To execute Kotlin and Java projects, you need to:
+1) Install Intellij Idea (https://www.jetbrains.com/help/idea/installation-guide.html)
+2) go to File -> Open -> choose the folder with Java/Kotlin project
+3) Install Java/Kotlin itself 
+>>>>>>> ff38fabb27d6ea69a9db66b2a472a6415288732f
 4) Run the project from Intellij Idea
 
 
@@ -29,4 +45,8 @@
 3) In Android Studio go to File -> Open -> choose project's folder
 4) In Android Studio go to Tools -> AVD manager
 5) If there is no emulator in the list, create one 
+<<<<<<< HEAD
 6) Run application from Android Studio
+=======
+6) Run application from Android Studio
+>>>>>>> ff38fabb27d6ea69a9db66b2a472a6415288732f
