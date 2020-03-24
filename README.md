@@ -1,4 +1,4 @@
-# lagnComparison
+# Language Comparison via Graphical User Interfaces
 
 
 # In order to execute Javascript project:
@@ -11,7 +11,6 @@
 1) Install Intellij Idea
 2) go to File -> Open -> choose the folder with Java/Kotlin project
 3) Install Java/Kotlin itself
-# Language Comparison via Graphical User Interfaces
 
 
 # In order to execute Javascript project:
