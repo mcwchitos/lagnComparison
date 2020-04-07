@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">guis_kotlin</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -21,4 +21,19 @@
     <string name="title_activity_g_u_i1">GUI1Activity</string>
     <string name="increase">Increase</string>
     <string name="decrease">Decrease</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="count">Count</string>
+    <string name="_0">0</string>
+    <string name="celsius">"Celsius = "</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="reset">Reset</string>
+    <string-array name="list" tools:ignore="InconsistentArrays">
+        <item>one-way flight</item>
+        <item>return flight</item>
+    </string-array>
 </resources>

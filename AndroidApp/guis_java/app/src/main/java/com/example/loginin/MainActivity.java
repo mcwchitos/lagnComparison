@@ -84,11 +84,9 @@ public class MainActivity extends AppCompatActivity {
     TextView Total;
     int integer = 0;
     EditText cel, fahr, date1, date2;
-<<<<<<< HEAD
-    boolean isCel, isFahr;
-=======
+
     boolean inFahr, inCel;
->>>>>>> ff38fabb27d6ea69a9db66b2a472a6415288732f
+
 
 
     @Override
@@ -98,13 +96,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-<<<<<<< HEAD
-        isCel = false;
-        isFahr = false;
-=======
         inFahr = false;
         inCel = false;
->>>>>>> ff38fabb27d6ea69a9db66b2a472a6415288732f
 
         timer = (ProgressBar)findViewById(R.id.timer);
         slider = (SeekBar)findViewById(R.id.slider);
@@ -230,14 +223,10 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-<<<<<<< HEAD
-                if (isFahr) return;
-                isCel = true;
-=======
-                if(inFahr)
-                    return;
+
+                if(inFahr) return;
                 inCel = true;
->>>>>>> ff38fabb27d6ea69a9db66b2a472a6415288732f
+
                 String line = cel.getText().toString();
                 if (!line.equals("")){
                     System.out.println("cel" + line);
@@ -246,11 +235,9 @@ public class MainActivity extends AppCompatActivity {
                     if (!newLine.equals(fahr.getText().toString()))
                         fahr.setText(newLine);
                 }
-<<<<<<< HEAD
-                isCel = false;
-=======
+
                 inCel = false;
->>>>>>> ff38fabb27d6ea69a9db66b2a472a6415288732f
+
             }
             @Override
             public void afterTextChanged(Editable s) {}
@@ -262,14 +249,10 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-<<<<<<< HEAD
-                if (isCel) return;
-                isFahr = true;
-=======
-                if(inCel)
-                    return;
+
+                if (inCel) return;
                 inFahr = true;
->>>>>>> ff38fabb27d6ea69a9db66b2a472a6415288732f
+
                 String line = fahr.getText().toString();
                 if (!line.equals("")){
                     System.out.println("fahr" + line);
@@ -278,11 +261,8 @@ public class MainActivity extends AppCompatActivity {
                     if (!newLine.equals(cel.getText().toString()))
                         cel.setText(newLine);
                 }
-<<<<<<< HEAD
-                isFahr = false;
-=======
+
                 inFahr = false;
->>>>>>> ff38fabb27d6ea69a9db66b2a472a6415288732f
             }
             @Override
             public void afterTextChanged(Editable s) {}
