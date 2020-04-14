@@ -28,3 +28,10 @@ link to doc https://docs.google.com/spreadsheets/d/1431eMNftqduZM2Hl6auBiHbcqhkQ
 4) In Android Studio go to Tools -> AVD manager
 5) If there is no emulator in the list, create one 
 6) Run application from Android Studio
+
+# To execute JS mobile(android) application, you need to:
+1) Install nodejs (https://nodejs.org/en/download/)
+2) Install React Native framework (https://reactnative.dev/docs/environment-setup)
+3) Open folder with JS android application
+4) Run "npm start"
+5) When everything is finished, press "a" to run on the emulator, "w" - web, or scan QR code with connected device
