@@ -1,7 +1,8 @@
-package com.example.loginin.ui;
+package com.example.loginin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -12,28 +13,49 @@ import android.view.View;
 
 import com.example.loginin.R;
 
-public class CanvasActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class CanvasActivity extends Activity {
+
+    class Circle{
+        int x;
+        int y;
+        int r;
+
+        public Circle(int x, int y, int r){
+            this.x = x;
+            this.y = y;
+            this.r = r;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_canvas);
+        setContentView(new DrawView(this));
     }
 
     class DrawView extends View {
+
+        ArrayList<Circle> db = new ArrayList<>();
         Paint p;
         Rect rect;
 
-        public DrawView(Context context){
+        public DrawView(Context context) {
             super(context);
             p = new Paint();
             rect = new Rect();
         }
 
         @Override
-        protected void onDraw(Canvas canvas){
-            canvas.drawARGB(50, 102, 204, 255);
+        protected void onDraw(Canvas canvas) {
+            // заливка канвы цветом
+            canvas.drawARGB(80, 102, 204, 255);
 
+
+
+            // настройка кисти
+            // красный цвет
             p.setColor(Color.RED);
             // толщина линии = 10
             p.setStrokeWidth(10);
@@ -57,5 +79,6 @@ public class CanvasActivity extends AppCompatActivity {
             // рисуем прямоугольник из объекта rect
             canvas.drawRect(rect, p);
         }
+
     }
 }

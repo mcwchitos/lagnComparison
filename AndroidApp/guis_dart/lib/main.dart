@@ -50,83 +50,58 @@ class _MyHomePageState extends State<MyHomePage> {
       home:  Container(
         alignment: Alignment.topCenter,
         width: 600,
-        height: 150,
+        height: 1200,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget> [
-            Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              FloatingActionButton(
-                onPressed: _decrementCounter,
-                tooltip: 'Decrement',
-                child: Icon(Icons.arrow_back_ios),
+            Container(
+              width: 600,
+              height: 60,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  RaisedButton(
+                    onPressed: _decrementCounter,
+                    child: const Text(
+                      "Decrement",
+                      style: TextStyle(fontSize: 20)
+                    ),
+                  ),
+                  Container(
+                    width: 120,
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      '$_counter',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                  RaisedButton(
+                    onPressed: _incrementCounter,
+                    child: const Text(
+                      "Increment",
+                      style: TextStyle(fontSize: 20)
+                    ),
+                  ),
+                ],
               ),
-              Container(
-                width: 120,
-                alignment: Alignment.topCenter,
-                child: Text(
-                  '$_counter'
-                ),
-              ),
-              FloatingActionButton(
-                onPressed: _incrementCounter,
-                tooltip: 'Increment',
-                child: Icon(Icons.arrow_forward_ios),
-              )
-            ],
             ),
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Container(
-                  width: 150,
-                  height: 60,
-                  child: Scaffold(
-                    body: TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Password',
-                      ),
+                RaisedButton(
+                    onPressed: _incrementCounter,
+                    child: const Text(
+                      "Increment",
+                      style: TextStyle(fontSize: 20)
                     ),
-                  )
-                ),
-                Container(
-                  width: 120,
-                  alignment: Alignment.topCenter,
-                  child: Text(
-                    'Celsius'
                   ),
-                ),
-                Container(
-                  width: 150,
-                  height: 60,
-                  child: Scaffold(
-                    body: TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Password',
-                      ),
-                    ),
-                  )
-                ),
-                Container(
-                  width: 120,
-                  alignment: Alignment.topCenter,
-                  child: Text(
-                    'Fahrenheit'
-                  ),
-                ),
               ],
-            )
+            ),
           ],
         )
-      
       )
     );
   }
