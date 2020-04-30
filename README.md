@@ -1,5 +1,7 @@
 # Language Comparison via Graphical User Interfaces
-link to doc https://docs.google.com/spreadsheets/d/1431eMNftqduZM2Hl6auBiHbcqhkQp1g2bmZIoyH0u30/edit?usp=sharing
+link to docs
+https://docs.google.com/spreadsheets/d/1431eMNftqduZM2Hl6auBiHbcqhkQp1g2bmZIoyH0u30/edit?usp=sharing
+https://docs.google.com/document/d/1h5YN7tPDxZzkQiO13gkrmVLtwQ2d1tOP0b7Hwc6l9vc/edit?usp=sharing
 
 # In order to execute Javascript project:
 1) Install nodejs (https://nodejs.org/en/download/)
