@@ -1,6 +1,7 @@
 package com.example.loginin;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -72,6 +73,8 @@ class MyThread implements Runnable {
 
 public class MainActivity extends AppCompatActivity {
 
+
+    Intent intent;
     private AppBarConfiguration mAppBarConfiguration;
     int maxTimer = 5;
     ProgressBar timer;
@@ -80,11 +83,13 @@ public class MainActivity extends AppCompatActivity {
     MyThread curT;
     Date d1, d2;
     Spinner drop;
-    Button increment, book, reset;
+    Button increment, book, reset, next;
     TextView Total;
     int integer = 0;
     EditText cel, fahr, date1, date2;
+
     boolean inFahr, inCel;
+
 
 
     @Override
@@ -105,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
         drop = (Spinner)findViewById(R.id.dropDown);
         date1 = (EditText)findViewById(R.id.date1);
         date2 = (EditText)findViewById(R.id.date2);
+
+        next = (Button)findViewById(R.id.next);
 
         TextView txt = (TextView)findViewById(R.id.wellcome);
         increment = (Button)findViewById(R.id.increment);
@@ -138,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 th.run();
             }
         });
+
 
 
         drop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -215,15 +223,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(MainActivity.this,CanvasActivity.class);
+                System.out.println("Going to canvas");
+                startActivity(intent);
+            }
+        });
+
         cel.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @SuppressLint("SetTextI18n")
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(inFahr)
-                    return;
+
+                if(inFahr) return;
                 inCel = true;
+
                 String line = cel.getText().toString();
                 if (!line.equals("")){
                     System.out.println("cel" + line);
@@ -232,7 +250,9 @@ public class MainActivity extends AppCompatActivity {
                     if (!newLine.equals(fahr.getText().toString()))
                         fahr.setText(newLine);
                 }
+
                 inCel = false;
+
             }
             @Override
             public void afterTextChanged(Editable s) {}
@@ -244,9 +264,10 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(inCel)
-                    return;
+
+                if (inCel) return;
                 inFahr = true;
+
                 String line = fahr.getText().toString();
                 if (!line.equals("")){
                     System.out.println("fahr" + line);
@@ -255,13 +276,12 @@ public class MainActivity extends AppCompatActivity {
                     if (!newLine.equals(cel.getText().toString()))
                         cel.setText(newLine);
                 }
+
                 inFahr = false;
             }
             @Override
             public void afterTextChanged(Editable s) {}
         });
-
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

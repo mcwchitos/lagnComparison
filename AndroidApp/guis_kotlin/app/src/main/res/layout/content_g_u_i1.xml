@@ -4,55 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_main">
+    android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/wellcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        />
-
-
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:defaultNavHost="true"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/mobile_navigation" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/increment"
-            android:layout_width="232dp"
+            android:id="@+id/increase"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/count" />
+            android:text="@string/increase"
+            tools:ignore="ButtonStyle,MissingConstraints"
+            tools:layout_editor_absoluteX="265dp"
+            tools:layout_editor_absoluteY="341dp" />
 
         <TextView
-            android:id="@+id/display"
-            android:layout_width="411dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/_0"
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
             android:textAlignment="center"
-            android:textSize="24sp" />
+            android:gravity="center_horizontal" />
 
+        <Button
+            android:id="@+id/decrease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/decrease"
+            tools:ignore="ButtonStyle,MissingConstraints"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="341dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -74,7 +59,8 @@
             android:layout_weight="1"
             android:text="@string/celsius"
             android:textAlignment="center"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:gravity="center_horizontal" />
 
         <EditText
             android:id="@+id/fahrNum"
@@ -90,7 +76,8 @@
             android:layout_weight="1"
             android:text="@string/fahrenheit"
             android:textAlignment="center"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 
@@ -169,20 +156,5 @@
                 android:progress="5"
                 android:max="30"/>
         </LinearLayout>
-
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="NextPage" />
-    </LinearLayout>
-
 </LinearLayout>
