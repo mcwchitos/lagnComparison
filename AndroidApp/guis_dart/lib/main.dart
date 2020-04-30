@@ -46,6 +46,78 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Row row1 = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        RaisedButton(
+          onPressed: _decrementCounter,
+          child: const Text(
+            "Decrement",
+            style: TextStyle(fontSize: 20)
+          ),
+        ),
+        Container(
+          width: 120,
+          alignment: Alignment.topCenter,
+          child: Text(
+            '$_counter',
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
+        RaisedButton(
+          onPressed: _incrementCounter,
+          child: const Text(
+            "Increment",
+            style: TextStyle(fontSize: 20)
+          ),
+        ),
+      ],
+    );
+    
+    Row row3 = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        RaisedButton(
+          onPressed: _decrementCounter,
+          child: const Text(
+            "Decrement",
+            style: TextStyle(fontSize: 20)
+          ),
+        ),
+        Container(
+          width: 120,
+          alignment: Alignment.topCenter,
+          child: Text(
+            '$_counter',
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
+        RaisedButton(
+          onPressed: _incrementCounter,
+          child: const Text(
+            "Increment",
+            style: TextStyle(fontSize: 20)
+          ),
+        ),
+      ],
+    );
+
+    Row row2 = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        RaisedButton(
+            onPressed: _incrementCounter,
+            child: const Text(
+              "Increment",
+              style: TextStyle(fontSize: 20)
+            ),
+          ),
+      ],
+    );
+    
     return new MaterialApp(
       home:  Container(
         alignment: Alignment.topCenter,
@@ -57,49 +129,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: 600,
               height: 60,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  RaisedButton(
-                    onPressed: _decrementCounter,
-                    child: const Text(
-                      "Decrement",
-                      style: TextStyle(fontSize: 20)
-                    ),
-                  ),
-                  Container(
-                    width: 120,
-                    alignment: Alignment.topCenter,
-                    child: Text(
-                      '$_counter',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                  RaisedButton(
-                    onPressed: _incrementCounter,
-                    child: const Text(
-                      "Increment",
-                      style: TextStyle(fontSize: 20)
-                    ),
-                  ),
-                ],
-              ),
+              child: row1,
             ),
-            
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                RaisedButton(
-                    onPressed: _incrementCounter,
-                    child: const Text(
-                      "Increment",
-                      style: TextStyle(fontSize: 20)
-                    ),
-                  ),
-              ],
-            ),
+            row2,
           ],
         )
       )
