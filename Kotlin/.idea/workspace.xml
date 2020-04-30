@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1beba19-492e-4df0-8bce-e71a862c743f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../AndroidApp/LoginIn/app/src/main/java/com/example/loginin/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidApp/LoginIn/app/src/main/java/com/example/loginin/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java/out/production/Javafx/main/GUI1_counter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java/out/production/Javafx/main/GUI1_counter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AndroidApp/LoginIn/app/app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AndroidApp/guis_kotlin/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AndroidApp/guis_kotlin/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidApp/guis_kotlin/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AndroidApp/guis_kotlin/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidApp/guis_kotlin/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +58,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../java/SoftwareSystemsDesignLab2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -277,6 +278,7 @@
       <workItem from="1583885428375" duration="1274000" />
       <workItem from="1583916814790" duration="212000" />
       <workItem from="1584300374003" duration="674000" />
+      <workItem from="1586238201625" duration="27000" />
     </task>
     <servers />
   </component>
