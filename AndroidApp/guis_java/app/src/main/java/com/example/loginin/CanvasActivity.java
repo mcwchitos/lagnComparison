@@ -9,6 +9,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 
 import com.example.loginin.R;
@@ -18,11 +21,11 @@ import java.util.ArrayList;
 public class CanvasActivity extends Activity {
 
     class Circle{
-        int x;
-        int y;
-        int r;
+        float x;
+        float y;
+        float r;
 
-        public Circle(int x, int y, int r){
+        public Circle(float x, float y, float r){
             this.x = x;
             this.y = y;
             this.r = r;
@@ -35,49 +38,58 @@ public class CanvasActivity extends Activity {
         setContentView(new DrawView(this));
     }
 
-    class DrawView extends View {
+    class DrawView extends SurfaceView {
 
         ArrayList<Circle> db = new ArrayList<>();
+        SurfaceHolder surfaceHolder;
         Paint p;
-        Rect rect;
+        private float r = 60;
 
         public DrawView(Context context) {
             super(context);
+            surfaceHolder = getHolder();
             p = new Paint();
-            rect = new Rect();
+            p.setColor(Color.BLACK);
+            p.setStyle(Paint.Style.FILL);
         }
 
         @Override
-        protected void onDraw(Canvas canvas) {
-            // заливка канвы цветом
-            canvas.drawARGB(80, 102, 204, 255);
+        public boolean onTouchEvent(MotionEvent event) {
+            float x = event.getX();
+            float y = event.getY();
+            System.out.println("x: " + x + ", y: " + y);
+            Circle cir = new Circle(x, y, r);
 
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    System.out.println("down");
+                    if (x < 150 && y > 2500){
+                        if (db.size() != 0)
+                            db.remove(db.size() - 1);
+                        return true;
+                    }
+                    db.add(cir);
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    System.out.println("move");
+                    break;
+                case MotionEvent.ACTION_UP:
+                    if (surfaceHolder.getSurface().isValid()) {
+                        Canvas canvas = surfaceHolder.lockCanvas();
+                        canvas.drawColor(Color.WHITE);
+                        canvas.drawRect(0, 2500, 150, 2700, p);
+                        for (Circle crl:db) {
+                            canvas.drawCircle(crl.x, crl.y, crl.r, p);
+                        }
+                        surfaceHolder.unlockCanvasAndPost(canvas);
+                    }
+                    break;
+                case MotionEvent.ACTION_CANCEL:
+                    System.out.println("cancel");
+                    break;
+            }
 
-
-            // настройка кисти
-            // красный цвет
-            p.setColor(Color.RED);
-            // толщина линии = 10
-            p.setStrokeWidth(10);
-
-            // рисуем точку (50,50)
-            canvas.drawPoint(50, 50, p);
-
-            // рисуем линию от (100,100) до (500,50)
-            canvas.drawLine(100,100,500,50,p);
-
-            // рисуем круг с центром в (100,200), радиус = 50
-            canvas.drawCircle(100, 200, 50, p);
-
-            // рисуем прямоугольник
-            // левая верхняя точка (200,150), нижняя правая (400,200)
-            canvas.drawRect(200, 150, 400, 200, p);
-
-            // настройка объекта Rect
-            // левая верхняя точка (250,300), нижняя правая (350,500)
-            rect.set(250, 300, 350, 500);
-            // рисуем прямоугольник из объекта rect
-            canvas.drawRect(rect, p);
+            return true;
         }
 
     }

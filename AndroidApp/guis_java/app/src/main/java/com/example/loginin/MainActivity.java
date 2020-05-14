@@ -2,6 +2,7 @@ package com.example.loginin;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -29,58 +30,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-class MyThread implements Runnable {
-    private boolean onRun;
-
-    String name;
-    int maxTimer;
-    ProgressBar timer;
-    Thread t;
-
-    MyThread(String threadName, int maxTimer, ProgressBar pg)
-    {
-        name = threadName;
-        this.maxTimer = maxTimer;
-        timer = pg;
-        t = new Thread(this, name);
-        onRun = false;
-        t.start();
-    }
-    // execution of thread starts from run() method
-    public void run()
-    {
-        onRun = true;
-        while (onRun) {
-            for (int i = maxTimer; i >= 0; --i){
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                timer.setProgress(100 - (int) (((double)i / (double)maxTimer) * 100));
-            }
-            onRun = false;
-        }
-        System.out.println(name + " Stopped.");
-    }
-
-    // for stopping the thread
-    public void stop()
-    {
-        onRun = false;
-    }
-}
-
 public class MainActivity extends AppCompatActivity {
-
 
     Intent intent;
     private AppBarConfiguration mAppBarConfiguration;
     int maxTimer = 5;
+    int count = 1;
     ProgressBar timer;
     SeekBar slider;
     SimpleDateFormat df = new SimpleDateFormat("dd.MM.yyyy");
-    MyThread curT;
     Date d1, d2;
     Spinner drop;
     Button increment, book, reset, next;
@@ -90,6 +48,36 @@ public class MainActivity extends AppCompatActivity {
 
     boolean inFahr, inCel;
 
+
+    class MyTask extends AsyncTask<Integer, Integer, String> {
+        @Override
+        protected String doInBackground(Integer... params) {
+            for (; count <= params[0]; ++count) {
+                try {
+                    Thread.sleep(1000);
+                    publishProgress(100 - (int) (((double)count / (double)maxTimer) * 100));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            return "Task Completed.";
+        }
+        @Override
+        protected void onPostExecute(String result) {
+            timer.setVisibility(View.GONE);
+            System.out.println(result);
+
+        }
+        @Override
+        protected void onPreExecute() {
+            System.out.println("Task Starting...");
+        }
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            System.out.println("Running..."+ values[0]);
+            timer.setProgress(values[0]);
+        }
+    }
 
 
     @Override
@@ -138,14 +126,14 @@ public class MainActivity extends AppCompatActivity {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (curT != null)
-                    curT.stop();
-                MyThread th = new MyThread("Reset", maxTimer, timer);
-                curT = th;
-                th.run();
+                count =1;
+                timer.setVisibility(View.VISIBLE);
+                timer.setProgress(0);
+                if (v.getId() == R.id.reset) {
+                    new MyTask().execute(maxTimer);
+                }
             }
         });
-
 
 
         drop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -307,7 +295,4 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-
-
 }

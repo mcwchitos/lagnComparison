@@ -94,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
-                startActivity(Intent(this@LoginActivity,GUI1Activity::class.java))
+                startActivity(Intent(this@LoginActivity,MainActivity::class.java))
             }
         }
     }
